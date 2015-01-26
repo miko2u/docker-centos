@@ -16,7 +16,7 @@ rebuild: base
 	@docker build --rm --no-cache -t $(NAME)/$(CONTAINER):$(VERSION) .
 
 start:
-	@docker create -i -h $(HOSTNAME).localdomain --name $(CONTAINER) $(NAME)/$(CONTAINER)
+	@docker create -it -h $(HOSTNAME).localdomain --name $(CONTAINER) $(NAME)/$(CONTAINER)
 	@docker start $(CONTAINER)
 
 clean:
